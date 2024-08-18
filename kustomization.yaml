@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - manifests/deployment.yaml
+  - manifests/clusterip-service.yaml
+images:
+  - name: PING_PONG_IMG
+    newName: vishalkhanna995/ping-pong:latest

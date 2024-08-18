@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-pong
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-pong
+  template:
+    metadata:
+      labels:
+        app: ping-pong
+    spec:
+      #volumes:
+        #- name: output-pv
+         # persistentVolumeClaim:
+            #claimName: output-pv-claim
+      containers:
+        - name: ping-pong
+          image: PING_PONG_IMG
+          imagePullPolicy: Always
+          #volumeMounts:
+            #- name: output-pv
+            #  mountPath: /usr/persist/output
+          readinessProbe:
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            httpGet:
+              path: /is-ready
+              port: 3001
