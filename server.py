@@ -39,7 +39,7 @@ def ping_pong():
     global counter
 
     counter += 1
-    return f'pong: {counter}'
+    return f'pongUpdated: {counter}'
 
 
 @app.route("/pingpong-file")
