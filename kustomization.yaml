@@ -6,4 +6,4 @@ resources:
 images:
 - name: PING_PONG_IMG
   newName: vishalkhanna995/ping-pong
-  newTag: 0c186ec6159b56b08968551bedf9f43a87751d56
+  newTag: 67356dff39cb8ef2cd06cf8b95c54c79c7b9fb16
